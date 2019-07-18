@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Color Changer</title>
+
+	<style>
+	   body{
+	      width:640px;
+		  height:480px;
+	   }
+	   .mybutton {
+	      margin: 10px;
+	      background: white;
+	   }
+	   
+	   .purple {
+	      background: purple;	   
+	   }
+	   
+	   .mydiv {
+	      width:33%;
+		  height:33%;
+		  border: 1px black solid;
+	   }
+	
+	</style>
+</head>
+<body>
+<div class="mydiv purple">
+	<button class="mybutton">Click Me</button>
+	<script type="text/javascript">
+//       document.querySelector("button").addEventListener("click",function(){
+//	     var color = document.querySelector("div").style.background;
+//         if (color == "white") {
+//		   color = "purple";
+//	     } else
+//	     {
+//          color = "white";
+//	     }
+//	     document.querySelector("div").style.background = color;	   
+//       });
+	   var isPurple=true;   
+	   
+       document.querySelector("button").addEventListener("click",function(){
+         document.querySelector("div").classList.toggle("purple");	    
+//    CLASS LIST REMOVE DOES NOT WORK???		 
+/*	   
+	    isPurple = !isPurple;
+   	    alert("Purple state = "+isPurple);
+
+        if (isPurple == true) {
+		   document.querySelector("div").classList.Add("purple");
+		   alert("add purple");
+	     } else
+	     {
+		   alert("remove purple");		 
+		   document.querySelector("div").classList.Remove("purple");		 
+	     }
+*/		 
+       });
+	   
+	</script>	
+</div>
+</body>
+</html>
