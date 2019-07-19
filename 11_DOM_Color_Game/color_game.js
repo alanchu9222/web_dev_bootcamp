@@ -99,6 +99,36 @@ function blankSquares()
   }
 }
 
+function blankBottomSquares()
+{
+
+  var squares = document.querySelectorAll(".square");
+
+	for (var i=0;i<squares.length;i++)		
+	{
+		if (i>2)
+		{
+ 		  // Add colors to squares
+		  squares[i].style.display = "none";			
+		}
+  }
+}
+
+function restoreBottomSquares()
+{
+
+  var squares = document.querySelectorAll(".square");
+
+	for (var i=0;i<squares.length;i++)		
+	{
+		if (i>2)
+		{
+ 		  // Add colors to squares
+		  squares[i].style.display = "block";			
+		}
+  }
+}
+
 
 function setupSquares()
 {
