@@ -7,6 +7,7 @@ var colors= [
 "rgb(255, 0, 0)"]
 colors = generateRandomColors(6);
 var pickedColor = colorPicker();
+var modeEasy = false;
 
 //document.querySelector("#colorselected").textContent = "HELLO HELLO";
 colorSelectedElement = document.querySelector("#colorselected");
@@ -15,13 +16,21 @@ colorSelectedElement.textContent = pickedColor;
 var message = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var reset = document.querySelector("#reset");
+var easy = document.querySelector("#easy");
+var hard = document.querySelector("#hard");
 message.textContent="Pick a color!";  
-
 
 setupSquares();
 
 reset.addEventListener("click",function(){
-	colors = generateRandomColors(6);
+	blankSquares();	
+	if (modeEasy == true)
+	{
+		colors = generateRandomColors(3);
+	} else
+	{
+		colors = generateRandomColors(6);		
+	}
   pickedColor = colorPicker();
   colorSelectedElement.textContent = pickedColor;
   message.textContent="Pick a color!";  
@@ -29,6 +38,28 @@ reset.addEventListener("click",function(){
 
   setupSquares();
 });
+
+easy.addEventListener("click",function(){
+	modeEasy=true;
+	blankSquares();
+	colors = generateRandomColors(3);
+  pickedColor = colorPicker();
+  colorSelectedElement.textContent = pickedColor;
+  message.textContent="Pick a color!";  
+	h1.style.backgroundColor = "#232323";
+  setupSquares();
+});
+
+hard.addEventListener("click",function(){
+	modeEasy=false;
+	colors = generateRandomColors(6);
+  pickedColor = colorPicker();
+  colorSelectedElement.textContent = pickedColor;
+  message.textContent="Pick a color!";  
+	h1.style.backgroundColor = "#232323";
+  setupSquares();
+});
+
 
 
 function colorPicker()
@@ -56,10 +87,23 @@ function generateRandomColors(num)
   return colorsArray;
 }
 
+function blankSquares()
+{
+
+  var squares = document.querySelectorAll(".square");
+
+	for (var i=0;i<squares.length;i++)		
+	{
+		// Add colors to squares
+		squares[i].style.backgroundColor = "#232323";
+  }
+}
+
+
 function setupSquares()
 {
   var squares = document.querySelectorAll(".square");
-	for (var i=0;i<squares.length;i++)
+	for (var i=0;i<colors.length;i++)
 	{
 		// Add colors to squares
 		squares[i].style.backgroundColor = colors[i];
