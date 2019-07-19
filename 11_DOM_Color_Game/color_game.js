@@ -6,44 +6,31 @@ var colors= [
 "rgb(0, 0, 255)",
 "rgb(255, 0, 0)"]
 colors = generateRandomColors(6);
-var pickedColor = pickedColor();
+var pickedColor = colorPicker();
 
 //document.querySelector("#colorselected").textContent = "HELLO HELLO";
 colorSelectedElement = document.querySelector("#colorselected");
 colorSelectedElement.textContent = pickedColor;
 
-var squares = document.querySelectorAll(".square");
+
 var message = document.querySelector("#message");
 var h1 = document.querySelector("h1");
-
-for (var i=0;i<squares.length;i++)
-{
-	// Add colors to squares
-	squares[i].style.backgroundColor = colors[i];
-	// Add event listeners to the squares
-	squares[i].addEventListener("click",function(){
-		var clickedColor;
-		clickedColor = this.style.backgroundColor;
-    if (pickedColor == clickedColor)
-    {
-			message.textContent="Correct!";
-			h1.style.backgroundColor = pickedColor;
-			for (var i=0; i<colors.length;i++)
-			{
-  			squares[i].style.backgroundColor = pickedColor;				
-			}
-    } else
-    {
-			message.textContent="Try Again!";
-
-			this.style.backgroundColor = "#232323";
-    }
-	})
-
-}
+var reset = document.querySelector("#reset");
+message.textContent="Pick a color!";  
 
 
-function pickedColor()
+setupSquares();
+
+reset.addEventListener("click",function(){
+	colors = generateRandomColors(6);
+  pickedColor = colorPicker();
+  colorSelectedElement.textContent = pickedColor;
+  message.textContent="Pick a color!";  
+  setupSquares();
+});
+
+
+function colorPicker()
 {
 	var colorsRandom;
 	colorsRandom= Math.floor(Math.random()*colors.length);
@@ -66,4 +53,33 @@ function generateRandomColors(num)
   	colorsArray.push(color);
   }
   return colorsArray;
+}
+
+function setupSquares()
+{
+  var squares = document.querySelectorAll(".square");
+	for (var i=0;i<squares.length;i++)
+	{
+		// Add colors to squares
+		squares[i].style.backgroundColor = colors[i];
+		// Add event listeners to the squares
+		squares[i].addEventListener("click",function(){
+			var clickedColor;
+			clickedColor = this.style.backgroundColor;
+	    if (pickedColor == clickedColor)
+	    {
+				message.textContent="Correct!";
+				h1.style.backgroundColor = pickedColor;
+				for (var i=0; i<colors.length;i++)
+				{
+	  			squares[i].style.backgroundColor = pickedColor;				
+				}
+	    } else
+	    {
+				message.textContent="Try Again!";
+
+				this.style.backgroundColor = "#232323";
+	    }
+		})
+  }
 }
