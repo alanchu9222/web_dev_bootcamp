@@ -34,7 +34,7 @@ reset.addEventListener("click",function(){
   pickedColor = colorPicker();
   colorSelectedElement.textContent = pickedColor;
   message.textContent="Pick a color!";  
-	h1.style.backgroundColor = "#232323";
+	h1.style.backgroundColor = "steelblue";
 
   setupSquares();
 });
@@ -46,7 +46,7 @@ easy.addEventListener("click",function(){
   pickedColor = colorPicker();
   colorSelectedElement.textContent = pickedColor;
   message.textContent="Pick a color!";  
-	h1.style.backgroundColor = "#232323";
+	h1.style.backgroundColor = "steelblue";
   setupSquares();
 });
 
@@ -56,7 +56,7 @@ hard.addEventListener("click",function(){
   pickedColor = colorPicker();
   colorSelectedElement.textContent = pickedColor;
   message.textContent="Pick a color!";  
-	h1.style.backgroundColor = "#232323";
+	h1.style.backgroundColor = "steelblue";
   setupSquares();
 });
 
