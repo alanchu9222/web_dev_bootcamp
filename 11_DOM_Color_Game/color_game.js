@@ -12,7 +12,6 @@ var pickedColor = colorPicker();
 colorSelectedElement = document.querySelector("#colorselected");
 colorSelectedElement.textContent = pickedColor;
 
-
 var message = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var reset = document.querySelector("#reset");
@@ -26,6 +25,8 @@ reset.addEventListener("click",function(){
   pickedColor = colorPicker();
   colorSelectedElement.textContent = pickedColor;
   message.textContent="Pick a color!";  
+	h1.style.backgroundColor = "#232323";
+
   setupSquares();
 });
 
