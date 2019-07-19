@@ -1,0 +1,4 @@
+Here is how to count DOM WebEvents on MDN webpage
+
+var list=document.querySelectorAll("tr td code a")
+for(var i=0;i<list.length;i++){console.log(list[i].textContent)}; 

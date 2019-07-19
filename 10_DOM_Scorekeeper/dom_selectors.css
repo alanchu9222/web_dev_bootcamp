@@ -1,0 +1,14 @@
+Examples of how to use DOM to get 
+the first <p>
+-----------------------------------------
+document.getElementById("first")
+document.getElementsByClassName("special")[0]
+document.querySelector("#first")
+document.querySelector(".special")
+document.querySelectorAll(".special")[0]
+document.getElementByTagname("p")[0]
+document.querySelector("h1 + p")
+
+
+
+
