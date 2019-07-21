@@ -1,10 +1,12 @@
-$("li").click(function(){
+$("ul").on("click","li",function(){
 		$(this).toggleClass("completed");
 	}
 )
 
-$("span").click(function(){
-		$(this).parent().fadeOut(500,function(){ $(this).remove()});
+$("ul").on("click", "span", function(){
+		$(this).parent().fadeOut(500,function(){ 
+			$(this).remove();
+		});
 	}
 )
 
