@@ -30,14 +30,28 @@ ul{
 	background: #f7f7f7;
 	box-shadow: 0 0 3px rgba(0,0,0,0.1);
 }
+/* Notice the rgba(0,0,0,0) is a transparent border to give a 
+   flush finish for the input box, i.e. no border
+
+   Notice below the inline-block is used to size the space occupied
+   by the trash icon.
+ */
+
 span {
 	background: #e74e3c;
 	height: 40px;
 	margin-right: 20px;
 	text-align: center;
 	color: white;
-	width: 40px;
-	display: inline-block; // allows the width and height of the span to be set
+	width: 0px;
+	display: inline-block;
+	transition: 0.2s linear;
+	opacity: 0;
+}
+
+li:hover span{
+	width: 40px;	
+	opacity: 1.0;
 }
 
 .fa-plus{
