@@ -30,7 +30,15 @@ ul{
 	background: #f7f7f7;
 	box-shadow: 0 0 3px rgba(0,0,0,0.1);
 }
-
+span {
+	background: #e74e3c;
+	height: 40px;
+	margin-right: 20px;
+	text-align: center;
+	color: white;
+	width: 40px;
+	display: inline-block;
+}
 
 input {
 	font-size: 18px;
