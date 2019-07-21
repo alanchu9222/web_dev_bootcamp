@@ -37,7 +37,11 @@ span {
 	text-align: center;
 	color: white;
 	width: 40px;
-	display: inline-block;
+	display: inline-block; // allows the width and height of the span to be set
+}
+
+.fa-plus{
+	float: right;
 }
 
 input {
